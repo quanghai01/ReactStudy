@@ -1,0 +1,42 @@
+.board {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.game-board {
+  width: 500px;
+  height: 500px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.game-cell {
+  display: flex;
+  box-shadow: 5px 5px 8px #d5cdcd;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.game {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.game > button {
+  display: block;
+  width: 200px;
+  height: 30px;
+  margin: 30px auto;
+  background: aliceblue;
+  cursor: pointer;
+}
+.is-x {
+  color: rgb(221, 43, 43);
+}
+.is-o {
+  color: rgb(14, 159, 199);
+}

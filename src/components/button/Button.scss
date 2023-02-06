@@ -1,0 +1,23 @@
+.button:hover {
+  background-color: rgb(32, 139, 206);
+}
+.button {
+  margin: 0 0 0 800px;
+  padding: 20px 20px;
+  background-color: rgb(13, 69, 119);
+  border-radius: 10px;
+  width: 300px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+
+  &--se {
+    background-color: rgb(3, 72, 23);
+  }
+  &--se:hover {
+    background-color: rgb(31, 232, 88);
+  }
+}

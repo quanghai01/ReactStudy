@@ -1,0 +1,39 @@
+.toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  align-items: center;
+}
+.toggle-main {
+  width: 200px;
+  background-color: #333;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 0 5px;
+  transition: all 0.2s linear;
+}
+.spinner {
+  border-radius: 50%;
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s linear;
+}
+
+.toggle-main.active {
+  background-color: rgb(232, 72, 72);
+}
+.spinner.active {
+  transform: translate(150px);
+}
+.toggle-text {
+  margin-left: 50px;
+  font-weight: 700;
+}
+.toggle-text.active {
+  color: rgb(232, 72, 72);
+}
