@@ -1,7 +1,6 @@
 import "./App.css";
 import Button from "./components/button/Button";
-import Card from "./components/card/Card";
-import CardList from "./components/card/CardList";
+
 import Count from "./components/state/Count";
 
 import Game from "./components/tictactoe/Game";
@@ -10,11 +9,15 @@ import Toggle from "./components/toggle/Toggle";
 import Binding from "./components/two-way/Binding";
 import Todo from "./components/two-way/Todo";
 import Content from "./components/useEffect/Content";
-
+import FakeContent from "./components/FakeChat/FakeContent";
 import YoutubeList from "./components/youtube/YoutubeList";
+import UseRef from "./components/useRef/UseRef";
+import CBContent from "./components/useCallback/CBContent";
+import MemoContent from "./components/useMemo/MemoContent";
+import UseReducer from "./components/useMemo/useReducer/UseReducer";
 function App() {
   return (
-    <div className="">
+    <div className="" style={{ padding: "0 20px" }}>
       <Count></Count>
       <YoutubeList></YoutubeList>
       <Toggle></Toggle>
@@ -25,8 +28,6 @@ function App() {
       <Button>Primary</Button>
       <Button se>Secondary</Button>
 
-      <CardList>{/* <Card></Card> */}</CardList>
-
       {/* f8 two-way */}
 
       <Binding></Binding>
@@ -34,6 +35,16 @@ function App() {
       <Todo></Todo>
 
       <Content></Content>
+
+      <FakeContent></FakeContent>
+      <UseRef></UseRef>
+      <CBContent></CBContent>
+
+      {/* useMemo */}
+      <MemoContent></MemoContent>
+
+      {/* UseReducer */}
+      <UseReducer></UseReducer>
     </div>
   );
 }
