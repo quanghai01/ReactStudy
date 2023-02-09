@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 // useReducer
 //1.Init state : 0
 //2. Actions: UP (state+1)   Down  (state-1)
@@ -6,45 +6,71 @@ import React, { useState, useReducer } from "react";
 //4. dipacth
 
 //init
-const initState = 0;
+const initState = {
+  job: "",
+  jobs: [],
+};
 
 //Actions
+const SET_JOB = "set_job";
+const ADD_JOB = "add_job";
+const DEL_JOB = "del_job";
 
-const UP_ACTION = "up";
-const DOWN_ACTION = "down";
-
+const setJob = (payload) => {
+  return {
+    type: SET_JOB,
+    payload,
+  };
+};
+const addJob = (payload) => {
+  return {
+    type: ADD_JOB,
+    payload,
+  };
+};
 //reducer
 
 const reducer = (state, action) => {
-  switch (action) {
-    case UP_ACTION:
-      return state + 1;
-    case DOWN_ACTION:
-      return state - 1;
+  switch (action.type) {
+    case SET_JOB:
+      return {
+        ...state,
+        job: action.payload,
+      };
+    case ADD_JOB:
+      return {
+        ...state,
+        job: [...state.jobs, action.payload],
+      };
     default:
-      throw new Error("invalid action");
+      throw new Error("false");
   }
 };
 const UseReducer = () => {
-  const [count, dispatch] = useReducer(reducer, initState);
+  const [state, dispatch] = useReducer(reducer, initState);
+
+  const { job, jobs } = state;
+  const handleSubmit = () => {
+    dispatch(addJob(job));
+    dispatch(setJob(""));
+  };
   return (
     <div>
-      <h1 style={{ color: "red" }}>UseReducer</h1>
-      <h2>{count}</h2>
-      <button
-        onClick={() => {
-          dispatch(DOWN_ACTION);
+      <h1 style={{ color: "red" }}>UseReducer Todo</h1>
+      <input
+        placeholder="Enter ..."
+        value={job}
+        onChange={(e) => {
+          dispatch(setJob(e.target.value));
         }}
-      >
-        Down
-      </button>
-      <button
-        onClick={() => {
-          dispatch(UP_ACTION);
-        }}
-      >
-        Up
-      </button>
+      />
+      <button onClick={handleSubmit}>Add</button>
+
+      <ul>
+        {jobs.map((job, index) => (
+          <li key={index}>{job} &times;</li>
+        ))}
+      </ul>
     </div>
   );
 };
