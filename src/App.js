@@ -15,6 +15,8 @@ import UseRef from "./components/useRef/UseRef";
 import CBContent from "./components/useCallback/CBContent";
 import MemoContent from "./components/useMemo/MemoContent";
 import UseReducer from "./components/useMemo/useReducer/UseReducer";
+import UseContext from "./components/context/Usecontext";
+import Imperative from "./components/useImperativeHandle/Imperative";
 function App() {
   return (
     <div className="" style={{ padding: "0 20px" }}>
@@ -45,6 +47,13 @@ function App() {
 
       {/* UseReducer */}
       <UseReducer></UseReducer>
+
+      {/* Context */}
+
+      <UseContext></UseContext>
+
+      {/* useImperative */}
+      <Imperative></Imperative>
     </div>
   );
 }
